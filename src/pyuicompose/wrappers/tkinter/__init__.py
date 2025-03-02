@@ -1,4 +1,5 @@
-from pyuicompose.render import Renderer
+from typing import TYPE_CHECKING
+import pyuicompose.render as render  
 
-class TkinterRenderer(Renderer):
-  pass
+class TkinterRenderer(render.BaseRenderer): 
+    pass

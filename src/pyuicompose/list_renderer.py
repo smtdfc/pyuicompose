@@ -1,7 +1,7 @@
 from enum import Enum
-from typing import Type
-from pyuicompose.wrappers.tkinter import TkinterRenderer
-from .Renderer import BaseRenderer
+from typing import Type,TYPE_CHECKING
+from .wrappers.tkinter import TkinterRenderer
+from .render import BaseRenderer
 
 class ListRenderer(Enum):
     TKINTER_RENDERER = TkinterRenderer 
