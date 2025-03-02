@@ -2,17 +2,13 @@ from typing import Type
 from pyuicompose.render import RenderContext,render_content,ContentTypes
 from .layout import Layout
 
-class App:
-  def __init__(self):
-    self.context = None
-    self.target = None
-  
-  def attach(self,target: Type[Layout]) -> None:
-    self.target = target
-  
+class LinearLayout(Layout):
+  def __init__(self,*childs):
+    super().__init__(*childs)
+    
   def render(self,context) -> None:
     render_content(
-      ContentTypes.APP,
+      ContentTypes.LINEAR_LAYOUT,
       self,
       context
     )

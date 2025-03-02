@@ -1,4 +1,5 @@
 from .base import BaseDeclaration
 
 class Layout(BaseDeclaration):
-  pass
+  def __init__(self,*childs):
+    self.childs = childs

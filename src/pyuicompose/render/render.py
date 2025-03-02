@@ -2,11 +2,10 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from pyuicompose.exceptions import ContextError
 from .content_types import ContentTypes
+from .context import RenderContext
 
 if TYPE_CHECKING:
   from pyuicompose.declarations import BaseDeclaration
-
-
 
 def render_content(
   type_:ContentTypes=ContentTypes.APP,
@@ -14,9 +13,9 @@ def render_content(
   context:RenderContext=None
  ) -> None:
    
-   if not context:
-     raise ContextError(
-       "Cannot find context to render contents !"
-     )
-   
-   
+   renderer = context.renderer
+   if type_ == ContentTypes.APP:
+     renderer.WINDOW(declaration)
+     
+   if type_ == ContentTypes.LINEAR_LAYOUT:
+      renderer.LINEAR_LAYOUT(declaration,context)
