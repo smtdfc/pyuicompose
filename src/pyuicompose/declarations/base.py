@@ -3,4 +3,4 @@ class BaseDeclaration:
     pass
   
   def __repr__(self):
-    return '[Declaration]'
+    return 'Declaration'

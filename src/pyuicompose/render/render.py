@@ -15,7 +15,10 @@ def render_content(
    
    renderer = context.renderer
    if type_ == ContentTypes.APP:
-     renderer.WINDOW(declaration)
+     renderer.WINDOW(declaration,context)
      
    if type_ == ContentTypes.LINEAR_LAYOUT:
       renderer.LINEAR_LAYOUT(declaration,context)
+   
+   if type_ == ContentTypes.TEXT:
+      renderer.TEXT(declaration,context)

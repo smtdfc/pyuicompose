@@ -2,21 +2,18 @@
 from .declarations import *
 from .list_renderer import *
 from .render import RenderContext
+from .app import AppRootElement
 
 def render(layout,renderer):
-  
+  root = AppRootElement()
   context = RenderContext(
-    renderer.value.WINDOW(
-      
-    ),
+    root,
     renderer.value,
     None,
     {
-      "type":"root"
+      "type":"app"
     }
   )
-  
+  print(layout)
   layout.render(context)
-  
-  context.root.element.mainloop()
-  
+  root.childs[0].show()

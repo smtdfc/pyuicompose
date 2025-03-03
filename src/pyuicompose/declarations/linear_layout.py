@@ -4,6 +4,7 @@ from .layout import Layout
 
 class LinearLayout(Layout):
   def __init__(self,*childs):
+    
     super().__init__(*childs)
     
   def render(self,context) -> None:
