@@ -1,18 +1,19 @@
-from typing import TYPE_CHECKING
-import pyuicompose.render as render  
+from typing import Type,TYPE_CHECKING
 from tkinter import *
+from pyuicompose.render import RenderContext,BaseRenderer
+from pyuicompose.declarations import  BaseDeclaration
 
 class TkinterWindowRenderer:
-  def __init__(self,declaration=None,context=None):
+  def __init__(self,declaration:Type[BaseDeclaration]=None,context:RenderContext=None):
     self.element = Tk()
 
 class TkinterLinearLayoutRenderer:
-  def __init__(self,declaration ,context):
+  def __init__(self,declaration:Type[BaseDeclaration]=None ,context:RenderContext=None):
     self.element = Frame(
       context.root.element
     )
     
-    self.context = render.RenderContext(
+    self.context = RenderContext(
       self,
       context.renderer,
       context,
@@ -22,6 +23,6 @@ class TkinterLinearLayoutRenderer:
     )
     
     
-class TkinterRenderer(render.BaseRenderer): 
+class TkinterRenderer(BaseRenderer): 
     WINDOW = TkinterWindowRenderer
     LINEAR_LAYOUT = TkinterLinearLayoutRenderer

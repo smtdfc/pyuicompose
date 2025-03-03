@@ -1,8 +1,9 @@
 from typing import Type
 from pyuicompose.render import RenderContext,render_content,ContentTypes
+from .base import BaseDeclaration
 from .layout import Layout
 
-class App:
+class Window(BaseDeclaration):
   def __init__(self):
     self.context = None
     self.target = None
