@@ -22,3 +22,6 @@ def render_content(
    
    if type_ == ContentTypes.TEXT:
       renderer.TEXT(declaration,context)
+   
+   if type_ == ContentTypes.BUTTON:
+      renderer.BUTTON(declaration,context)

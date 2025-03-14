@@ -14,6 +14,6 @@ def render(layout,renderer):
       "type":"app"
     }
   )
-  print(layout)
+  
   layout.render(context)
   root.childs[0].show()
